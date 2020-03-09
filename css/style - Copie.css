@@ -1,0 +1,346 @@
+
+/* Définition des polices personnalisées */
+
+h1 {
+	font-family : arial;
+	font-size: 25px;
+	color: #0d47a1;
+}
+
+h2 {
+	font-family : arial;
+	font-size: 15px;
+	color: #0d47a1;
+}
+
+
+/*Configuration du body*/
+body {
+    width: 100%; 
+   	
+    margin: auto;
+   
+}
+
+#bloc_page{
+	width: 1024px;
+	margin: auto;
+
+	height: 2000px;
+}
+
+
+header{
+	display:flex;
+	flex-direction: row;
+	height: 120px;
+
+}
+
+#titre{
+	width: 50%;
+	text-align: center;
+}
+
+
+#diaporama {
+	width: 1024px;
+	position: relative;
+	
+	height: 576px;
+	border : 1px solid grey;
+}
+
+#diaporama ul li {
+
+	position: absolute;
+	top:0;
+	left: 0;
+
+}
+
+#cartetstation {
+
+	height: 500px;
+	display: flex;
+	flex-direction: row;
+
+
+}
+
+#mapid{
+
+	width: 500px;
+	height: 500px;
+	
+}
+
+iframe{
+	width: 100%;
+	height: 100%;
+
+}
+
+#station{
+
+	width: 50%;
+	height: 500px;
+	
+	
+}
+
+.legende {
+
+	width: 120px;
+	height: 45px;
+	
+}
+
+
+#detail{
+
+	width: 80%;
+	
+	align-self: center;
+	height: 300px;
+	margin: auto;
+	
+
+}
+
+
+#localisation, #nomstation, #statut, #totalvelo, #dispo {
+	width: 310px;
+	height: 45px;
+	font-family : arial;
+	font-size: 12px;
+	color: #0d47a1;
+	padding-left: 5px;
+	margin-left: 5px;
+	line-height:45px;
+}
+
+form{
+	margin: auto;
+	width: 80%;
+	padding-left: 15px;
+	padding-top: 20px;
+	
+
+}
+
+input {
+	display: block;
+	border : 1px #DCDCDC solid;
+
+}
+
+
+.bloc {
+
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 15px;
+}
+
+#nom , #prenom {
+
+	width:90px;
+	display: flex;
+	flex-direction: row;
+}
+
+
+#namel, #firstnamel {
+
+	width: 150px;
+}
+
+	
+
+
+.submit, #effacer, #valider, #annuler{
+
+	height: 30px;
+	background-color: #0d47a1;
+	color: #ffffff;
+	border-radius: 10px;
+
+}
+
+#reserver{
+	display: none;
+}
+
+#valider{
+
+	display: none;
+	
+}
+
+.boutons{
+	display: flex;
+	flex-direction: row;
+}
+
+
+#bloccontrole{
+	width :1024px;
+	height: 150px;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+}
+
+.prev , .next , .pause, .play{
+
+	font-family: Arial ;
+
+	width: 45px;
+	height:45px;
+	border-radius: 5px;
+	border : 2px solid grey;
+	border-radius: 50%;
+	margin-right: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor:default;
+	justify-content: center;
+
+}
+
+.prev:hover , .next:hover ,.pause:hover, .play:hover {
+
+	background-color: #ff8f00;
+	color: #ffffff;
+	cursor:default;
+}
+
+#bloccontrole{
+	width :1024px;
+	height: 150px;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 25px;
+	align-items: center;
+
+}
+
+.fa-angle-right
+{
+	padding-right:-10px;
+	padding-top : 5px;
+
+}
+
+.fa-angle-left
+{
+
+padding-right:-10px;
+padding-top : 5px;
+	
+}
+
+.fa-pause
+{
+
+padding-right:-10px;
+padding-top : 12px;
+	
+}
+
+.fa-play
+{
+
+padding-right:-10px;
+padding-top : 12px;
+	
+}
+
+#ligne
+{
+	width: 100%;
+	height: 1px;
+	background-color: grey;
+	margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+
+footer{
+	width: 1024px;
+	height: 350px;
+	
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.fa-pen {
+	color : #ff8f00 ;
+}
+
+#resaencours , #reservation{
+	width: 490px;
+	height: 320px;
+	border : 2px solid grey;
+	padding: 3px;
+
+}
+
+#resaencours{
+
+
+	display: none;
+	
+}
+
+#reservation{
+
+	display: none;
+}
+
+
+#timer{
+	display: flex;
+	flex-direction: row;
+	font-family: courier;
+	font-weight: bold;
+	text-align: center;
+	height: 155px;
+	width:100%;
+
+}
+
+#minutes, #secondes{
+
+	width: 150px;
+	height: 30px;
+	border : 2px solid grey;
+	color: black;
+	font-size: 1.2em;
+	
+
+}
+
+#footer-text{
+
+	color : #ff8f00 ;
+	font-family : arial;
+	font-size: 1;
+	text-align: center;
+	height: 80px;
+	width:100%;
+font-weight: 500;
+
+}
+
+
+
+

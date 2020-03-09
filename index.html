@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Bienvenue sur le site ROuenLOC de location de vélo  de la ville de Rouen. Echappez-vous ! louez un vélo !" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+  crossorigin=""></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stylemobile.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+  crossorigin=""></script>
+  <link rel="icon" href="images/favicon2.ico" />
+  <title>ROuenLOC</title>
+</head>
+
+<body>
+
+  <div id="bloc_page">
+
+
+    <!-- HEADER -->
+    <header>
+      <div id="titre">
+        <h1></h1>
+      </div>
+      <div id="logo"> <img src="images/logo2.png" alt="logo_location_vélo_rouen"></div>
+    </header>
+
+    <!-- DIAPORAMA -->      
+
+    <section id="contenantdiapo">  <!--contenant diaporama -->
+
+      <div id="diaporama">
+        <img class="images" src="images/diapoAA.jpg"alt="mode_emploi_vélo_rouen">
+        <img class="images" src="images/diapoA.jpg" alt="mode_emploi_vélo_rouen" >
+        <img class="images" src="images/diapoB.jpg" alt="mode_emploi_vélo_rouen" >
+        <img class="images" src="images/diapoC.jpg" alt="mode_emploi_vélo_rouen" >
+        <img class="images" src="images/diapoD.jpg" alt="mode_emploi_vélo_rouen">
+      </div>
+    </section>
+    
+    <div id="bloccontrole"> <!--boutons de contrôle du diaporama -->
+      <div class="prev">
+        <i class="fas fa-angle-left fa-2x"></i>
+      </div>
+      <div class="pause">
+        <i class="fas fa-pause fa-1x"></i>
+      </div>
+      <div class="play">
+        <i class="fas fa-play fa-1x"></i>
+      </div>
+      <div class="next">
+        <i class="fas fa-angle-right fa-2x"></i>
+      </div>
+    </div>
+    
+    <!-- CARTE, SIGNATURE ET INFOS STATIONS -->     
+    <div  id="reservation"> <!--contenant signature -->
+      <h2>Une signature et le vélo est réservé  !</h2>
+      <hr />
+      <i class="fas fa-pen fa-2x"></i>
+      <br />
+      <canvas id="canvas" width="200" height="200" >
+      </canvas>
+      <div class="boutons">
+        <button type="button" id="effacer">Effacer</button>
+        <button type="button" id="valider">Valider</button>
+      </div>
+    </div>
+
+
+    <section id="cartetstation"> <!--contenant carte-infostation et signature -->
+
+      <div id="mapid"> <!--contenant carte leaflet et jcdecaux -->
+      </div>
+
+      <div id="station"><!--contenant détails de la station  -->
+        <div class="titre">
+          <h1>Détail de la station</h1>
+        </div>
+        <div id="detail">
+          <div class="bloc">
+            <div class="legende">
+              <h2>Nom:</h2>
+            </div>
+            <div id="nomstation">
+            </div>
+          </div>
+          <div class="bloc">
+            <div class="legende">
+              <h2>Adresse:</h2>
+            </div>
+            <div id="localisation">
+            </div>
+          </div>
+          <div class="bloc">
+            <div class="legende">
+              <h2> Statut:</h2>
+            </div>
+            <div id="statut">
+            </div>
+          </div>
+          <div class="bloc">
+            <div class="legende">
+              <h2>Nombre  de vélos:</h2>
+            </div>
+            <div id="totalvelo">
+            </div>
+          </div>
+          <div class="bloc">
+            <div class="legende">
+              <h2>Vélos disponibles:</h2>
+            </div>        
+            <div id="dispo">
+            </div>
+          </div>
+        </div>
+        <div class="titre"><!-- FORMULAIRES DE RESERVATIONS -->
+          <h1>Formulaire de réservation</h1>
+        </div>
+        <form>
+          <div class="bloc"> <!-- Nom -->
+            <div id="nom">
+              <label for="namel"><h2>Nom :</h2></label>
+            </div> 
+            <input type="text" name="name" id="namel" placeholder=""  value="" /> 
+            <br/>
+          </div>
+
+          <div class="bloc">
+            <div id="prenom">
+              <label for="firstnamel"><h2>Prénom :</h2></label> <!-- Prénom -->
+            </div>
+            <input type="text" name="prenom" id="firstnamel" placeholder="" value="" />
+            <br/>
+          </div>
+          <button class="submit" type="button" id="reserver"> Réserver  <!-- bouton réserver-->
+          </button>
+        </form>
+      </div>
+
+    </section>
+
+    <div id="infoBouton"> <!-- Divs qui s'affichent si nom et prénom non renseignés et vélos indisponibles -->
+      <h3>Veuillez renseigner votre nom et prénom </h3>
+    </div>
+    <div id="infoBouton2">
+      <h3>Impossible de Réserver, choisissez une station avec un vélo disponible...</h3>
+    </div>
+    
+
+
+    <!-- BLOC DE RESERVATION EN COURS ET TIMER  -->
+
+    <footer>
+      <div id="resaencours"> <!-- div où s'affiche la réservation validée en cours-->
+        <h2>Réservation :</h2>
+        <hr />
+        <div id="footer-text">
+          <h3></h3>
+        </div>
+        <div id="timer"><!-- div où s'affiche le chrono de 20 minutes-->
+        </div>
+        <button type="button" id="annuler">Annuler</button>
+      </div>
+    </footer>
+
+
+  </div>
+  <!-- liens pour les fichiers javascript-->
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/diaporama.js"></script>
+  <script src="js/ajax.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/leaflet.js"></script>
+  <script src="js/acquisitionmarker.js"></script>
+  <script src="js/reservation.js"></script>
+  <script src="js/compteur.js"></script>
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+  integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+  crossorigin=""></script>
+
+</body>
+
+</html>
+
